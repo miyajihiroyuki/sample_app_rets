@@ -1,4 +1,4 @@
-SampleAppRets::Application.routes.draw do
+SampleAppRets::Application.routes.draw do # |map|
   get "users/new"
   root  'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'
@@ -9,6 +9,19 @@ SampleAppRets::Application.routes.draw do
 #  get "static_pages/help"
 #  get "static_pages/about"
 #  get "static_pages/contact"
+
+#RestApi
+#  map.namespace :api do  |api|
+#    api.connect 'search.:format',
+#      :controller => :users,
+#      :action => :search,
+#      :conditions => { :method => :get }
+  get 'usersjson', to: 'usersjson#index'
+  get 'usersjson/new', to: 'usersjson#create'
+#  namespace :usersjson, {format: 'json'} do
+#      get "/" , :action => "index"
+#      post "/" , :action => "create"
+#  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

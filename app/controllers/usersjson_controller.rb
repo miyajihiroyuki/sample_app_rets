@@ -5,14 +5,16 @@ class UsersjsonController < ApplicationController
 
 #    @users = User.where("addr1 = ?", user_params[:addr1])
     @users = User.all
-    ### @users = @users.map do |user|
-    ###  {
-    ###       id: user.id,
-    ###       name: user.name,
-    ###       email: user.email,
-    ###   }
-    ### end
-    ### render json: @users
+    ### for Json   START###
+    @users = @users.map do |user| 
+     {
+          id: user.id,
+          name: user.name,
+          email: user.email,
+      }
+    end
+    render json: @users
+    ### for Json   END###
   end
 
   def create

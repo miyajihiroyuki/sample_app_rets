@@ -1,1 +1,14 @@
-Jsons=========
+=======userjson/index.html.erb=======
+
+<h1>All users</h1>
+
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <%= user.id %>:
+      <%= user.name %> - 
+      <%= user.email %>
+    </li>
+  <% end %>
+</ul>
+

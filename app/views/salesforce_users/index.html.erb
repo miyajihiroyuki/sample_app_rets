@@ -1,0 +1,25 @@
+<h1>SalesforceUsers#index</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+<!--      <th>Username</th> -->
+<!--      <th>Alias</th> -->
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sfusers.each do |sfuser| %>
+      <tr>
+        <td><%= link_to sfuser.Id, "/salesforce_users/#{sfuser.Id}"  %></td>
+        <td><%= sfuser.Name %></td>
+<!--        <td>< % = sfuser.Username %></td> -->
+<!--        <td>< % = sfuser.Alias %></td> -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+-----<br>
+<%= link_to "New", salesforce_users_new_path  %>

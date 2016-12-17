@@ -1,7 +1,7 @@
 SampleAppRets::Application.routes.draw do # |map|
   get "users/new"
   root  'static_pages#home'
-  match '/signup',  to: 'users#new',            via: 'get'
+  match '/signup',  to: 'localusers#new',            via: 'get'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
@@ -17,11 +17,20 @@ SampleAppRets::Application.routes.draw do # |map|
 #      :action => :search,
 #      :conditions => { :method => :get }
   get 'usersjson', to: 'usersjson#index'
+  post 'usersjson', to: 'usersjson#create'
   get 'usersjson/new', to: 'usersjson#create'
 #  namespace :usersjson, {format: 'json'} do
 #      get "/" , :action => "index"
 #      post "/" , :action => "create"
 #  end
+
+#Salesforce Users
+get 'salesforce_users' => 'salesforce_users#index'
+post 'salesforce_users' => 'salesforce_users#create'
+get 'salesforce_users/:id/edit' => 'salesforce_users#edit'
+get 'salesforce_users/new' => 'salesforce_users#new'
+get 'salesforce_users/:id' => 'salesforce_users#show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class LocalusersController < ApplicationController
 #RestApi
 #  def index
 #    @users = User.where("addr1 = ?", user_params[:addr1])
@@ -14,10 +14,10 @@ class UsersController < ApplicationController
 #  end
 
   def new
-    @user = User.new
+    @user = Localuser.new
   end
   def create
-    @user = User.new(params[:user])    # 実装は終わっていないことに注意!
+    @user = Localuser.new(params[:user])    # 実装は終わっていないことに注意!
     if @user.save
       # 保存の成功をここで扱う。
     else

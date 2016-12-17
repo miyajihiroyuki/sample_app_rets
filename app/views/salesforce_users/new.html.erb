@@ -1,0 +1,17 @@
+<%= form_for :salesforce_user, url: salesforce_users_path do |f| %>
+  <p>
+    <%= f.label :CPU__c %><br>
+    <%= f.text_field :CPU__c %>
+  </p>
+ 
+  <p>
+    <%= f.label :temperature__c %><br>
+    <%= f.text_field :temperature__c %>
+  </p>
+ 
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+-----<br>
+<%= link_to "Back", salesforce_users_path  %>
